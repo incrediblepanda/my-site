@@ -1,7 +1,6 @@
 import "./globals.css";
 import { ReactNode } from "react";
-import { PlasmicRootProvider } from "@plasmicapp/loader-nextjs";
-import { PLASMIC } from "../plasmic-init";
+import PlasmicProviderClient from "../components/PlasmicProviderClient";
 
 export const metadata = {
   title: "Highvale Events",
@@ -12,7 +11,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <PlasmicRootProvider loader={PLASMIC}>{children}</PlasmicRootProvider>
+        <PlasmicProviderClient>{children}</PlasmicProviderClient>
       </body>
     </html>
   );
