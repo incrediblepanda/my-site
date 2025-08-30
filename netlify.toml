@@ -1,0 +1,16 @@
+[images]
+  remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*", "https://marketplace.canva.com/.*", "https://www.honeybook.com/.*"]
+
+[build]
+  command = "bun install && bun run build"
+  publish = ".next"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "false"
+  NODE_VERSION = "18"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  included_files = ["!node_modules/**"]
